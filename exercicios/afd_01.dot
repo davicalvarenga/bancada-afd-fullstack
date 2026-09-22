@@ -1,0 +1,20 @@
+digraph AFD {
+  rankdir=LR; bgcolor=white; dpi=160;
+  node [shape=circle, fontname="Helvetica", fontsize=16, width=0.7, fixedsize=true];
+  edge [fontname="Helvetica", fontsize=15];
+  start [shape=point, width=0.1];
+  q2 [shape=doublecircle]; q5 [shape=doublecircle];
+  start -> q0;
+  q0 -> q1 [label="0"];
+  q0 -> q3 [label="1"];
+  q1 -> q2 [label="1"];
+  q1 -> q4 [label="0"];
+  q2 -> q2 [label="0,1"];
+  q3 -> q3 [label="1"];
+  q3 -> q4 [label="0"];
+  q4 -> q4 [label="0"];
+  q4 -> q5 [label="1"];
+  q5 -> q4 [label="0"];
+  q5 -> q3 [label="1"];
+  { rank=same; q1; q3; }
+}
